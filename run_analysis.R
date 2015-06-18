@@ -1,5 +1,13 @@
 library(dplyr)
-library(foreach)
+
+read.projectFiles.numeric <- function(file, nrows) {
+  read.table(
+    file = file,
+    header = FALSE,
+    sep = "",
+    colClasses = "numeric",
+    nrows = nrows)
+}
 
 activityLabels <- read.table(
   file = "UCI HAR Dataset//activity_labels.txt",
@@ -65,15 +73,11 @@ cleanTest<-cbind(subjectTest,yTest,XTest)
 
 cleanData<-rbind(cleanTrain,cleanTest)
 cleanData<-merge(x=activityLabels,y=cleanData,by="activityIndex")
+cleanData<-select(cleanData,-activityIndex)
 
 meanOfActivities <- cleanData %>%
   tbl_df %>%
   group_by(subjectID,activityName) %>%
   summarise_each(funs(mean))
 
-#melted<-melt(cleanData,id=c("subjectID","activityIndex","activityName"))
-
-#meanOfActivities<-foreach(i=1:length(unique(melted$subjectID)), .combine = rbind) %do% {
-#  c(subjectID=i,tapply(melted[melted$subjectID==i,"value"],melted[melted$subjectID==i,"activityName"],mean))
-#}
-
+write.table(meanOfActivities,file = 'meanOfActivities.txt',row.name=FALSE)
