@@ -2,11 +2,11 @@
 
 ## Files ##
 
-run_analysis.R - The single R script to download and process the data.
-README.md - A description of the project and goals.
-CODEBOOK.md - A listing of the variable names in the output data.
-meanOfActivities.txt - The output file.
-UCI HAR Dataset/ - The original data, associated metadata, readme, and codebook.
+* run_analysis.R - The single R script to download and process the data.
+* README.md - A description of the project and goals.
+* CODEBOOK.md - A listing of the variable names in the output data.
+* meanOfActivities.txt - The output file.
+* UCI HAR Dataset/ - The original data, associated metadata, readme, and codebook.
 
 ## Goals ##
 
@@ -34,16 +34,16 @@ First, we will check for and acquire the original data.  Of the original data fi
   * features.txt
   
 Goals - 4, 2
-With the data loaded, we then assign labels and select out only the relevant information.  The labels satisfy goal 4.  Addressing goal 2, only the original observations involving mean() and std() are kept.  The five vectors from the original data that average the signals in the signal windows have been intentionally ignored.  These are observations about the measurements rather than being themselves measurements.
+* With the data loaded, we then assign labels and select out only the relevant information.  The labels satisfy goal 4.  Addressing goal 2, only the original observations involving mean() and std() are kept.  The five vectors from the original data that average the signals in the signal windows have been intentionally ignored.  These are observations about the measurements rather than being themselves measurements.
 
 Goal - 1
-After naming the variables, the data is combined into one wide data frame with all variables existing in each row.  Time is taken to further clean up the names and correct typos from the original data set names (specifically, "BodyBody" in a few entries).
+* After naming the variables, the data is combined into one wide data frame with all variables existing in each row.  Time is taken to further clean up the names and correct typos from the original data set names (specifically, "BodyBody" in a few entries).
 
 Goal - 5
-With clean data available, dplyr is utilized to group and summarize the information into the desired shape.  
+* With clean data available, dplyr is utilized to group and summarize the information into the desired shape.  
 
 Goal - 6
-The data is written to file for storage and transmission.
+* The data is written to file for storage and transmission.
 
 Goal - 3
-This goal is not found in a specific spot in the script.  Rather, throughout operations, scripting variables are chosen for readability and clarity of purpose.
+* This goal is not found in a specific spot in the script.  Rather, throughout operations, scripting variables are chosen for readability and clarity of purpose.
