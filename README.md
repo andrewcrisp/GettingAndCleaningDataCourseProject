@@ -5,8 +5,8 @@
 * run_analysis.R - The single R script to download and process the data.
 * README.md - A description of the project and goals.
 * CODEBOOK.md - A listing of the variable names in the output data.
-* meanOfActivities.txt - The output file.
-* UCI HAR Dataset/ - The original data, associated metadata, readme, and codebook.
+* meanOfActivities.txt - The output file.  To read, use read.table("meanOfActivities.txt", header=TRUE)
+* UCI HAR Dataset/ - The original data, associated metadata, readme, and codebook.)
 
 ## Goals ##
 
