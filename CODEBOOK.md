@@ -1,7 +1,7 @@
-|Position|Variable Name|
-|--------|-------------|
-|1|subjectID|
-|2|activityName|
+|Position|Variable Name|Description|
+|--------|-------------|-----------|
+|1|subjectID|ID of the subject|
+|2|activityName|Activity being measured|
 |3|tBodyAcc.mean.X|
 |4|tBodyAcc.mean.Y|
 |5|tBodyAcc.mean.Z|
